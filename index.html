@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-compatible" content="IE=edge">
+       <meta name="viewport" content="width=device-width,initial-scale=1.0">
+       <link rel="stylesheet" href="styles.css">
+       <!-- <script src="script.js"></script>** -->
+       <title>Length Converter</title>
+ </head>
+ <body>
+    <div id="wrapper">
+        <h2>Converter</h2>
+        <div class="inputdiv">
+            <input type="text" id="input" placeholder="length in cm">
+
+        </div>
+        <div>
+            <button type="submit" onclick="converti()">Convert to inches</button>
+            
+
+        </div>
+        <div>
+            <button type="submit" onclick="convertmm()">Convert to milimeters</button>
+        </div>
+        <div>
+            <button type="submit" onclick="convertm()">Convert to meters</button>
+        </div>
+        <div id="result">
+
+        </div>
+    </div>
+    <script>
+        function converti()
+        {
+            const cmVal = Number(document.getElementById("input").value)
+            const inchVal = cmVal/2.54
+            const result = document.getElementById("result")
+            result.innerHTML = inchVal.toFixed(2) + " inches"
+        }
+        function convertmm()
+        {
+            const cmVal=Number(document.getElementById("input").value)
+            const milimeter=cmVal*10000
+            const result=document.getElementById("result")
+            result.innerHTML=milimeter.toFixed(2)+" milimeters"
+        }
+        function convertm()
+        {
+            const cmVal=Number(document.getElementById("input").value)
+            const meter=cmVal/100
+            const result=document.getElementById("result")
+            result.innerHTML=meter.toFixed(2)+" meters"
+        }
+        
+    </script>
+ </body>
+</html>
+
